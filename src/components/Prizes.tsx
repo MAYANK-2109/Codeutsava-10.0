@@ -54,7 +54,7 @@ export default function Prizes() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neon-cyan/5 rounded-full blur-[160px] pointer-events-none -z-10" />
       <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] bg-neon-purple/5 rounded-full blur-[120px] pointer-events-none -z-10" />
 
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
@@ -65,7 +65,7 @@ export default function Prizes() {
         <div className="absolute -top-12 left-1/2 -translate-x-1/2 animate-spin" style={{ animationDuration: '25s' }}>
           <Snowflake className="w-10 h-10 text-cyan-300/30" />
         </div>
-        
+
         <h2 className="text-4xl sm:text-5xl md:text-7xl font-sekuya font-bold text-white mb-4 tracking-widest drop-shadow-[0_0_20px_rgba(0,240,255,0.4)]">
           PRIZE POOL
         </h2>
@@ -78,7 +78,7 @@ export default function Prizes() {
       <div className="flex flex-col md:flex-row justify-center items-stretch gap-8 md:gap-6 mt-10 md:mt-16">
         {prizes.map((prize, idx) => {
           const Icon = prize.icon;
-          
+
           // Reorder for desktop: 2nd Place (left) | 1st Place (middle) | 3rd Place (right)
           let orderClass = "";
           if (idx === 0) orderClass = "order-1 md:order-2"; // 1st Place
@@ -96,10 +96,10 @@ export default function Prizes() {
             >
               {/* Frost Card container with gradient border glow */}
               <div className={`w-full h-full rounded-3xl border ${prize.borderGlow} bg-black/45 backdrop-blur-xl p-8 flex flex-col items-center justify-between text-center transition-all duration-500 overflow-hidden relative`}>
-                
+
                 {/* Winter Ice Glare Hover sweep effect */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent translate-x-[-150%] group-hover:translate-x-[150%] transition-transform duration-1000 ease-out pointer-events-none" />
-                
+
                 {/* Colorful auroral gradient aura inside card */}
                 <div className={`absolute -inset-2 bg-gradient-to-br ${prize.glowColor} opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-700 pointer-events-none`} />
 
@@ -129,7 +129,7 @@ export default function Prizes() {
                   <h3 className="text-xl sm:text-2xl font-sekuya font-bold text-white mb-3 tracking-widest">
                     {prize.title}
                   </h3>
-                  
+
                   {/* Divider line */}
                   <div className="w-12 h-0.5 bg-white/10 my-2" />
                 </div>
@@ -142,7 +142,7 @@ export default function Prizes() {
                   <div className={`text-4xl sm:text-5xl font-black ${prize.color} tracking-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]`}>
                     {prize.amount}
                   </div>
-                  
+
                   <div className="mt-4 text-cyan-200/40 text-xs font-mono">
                     + Premium Goodies & Swags
                   </div>
